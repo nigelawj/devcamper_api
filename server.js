@@ -1,9 +1,10 @@
 const express = require('express');
-const app = express();
+const app = express().use(express.json());
 
 const dotenv = require('dotenv');
 // const logger = require('./middleware/logger'); // Simple middleware for testing purposes
 const morgan = require('morgan');
+const connectDB = require('./config/db');
 
 // Load config
 dotenv.config({ path: './config/config.env' });
@@ -16,6 +17,9 @@ if (process.env.NODE_ENV === 'development') {
 
 // Routes
 app.use('/api/v1/bootcamps', require('./routes/bootcamps'));
+
+// Connect to DB
+connectDB();
 
 app.listen(
   PORT,
