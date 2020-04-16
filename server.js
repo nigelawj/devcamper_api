@@ -19,6 +19,7 @@ if (process.env.NODE_ENV === 'development') {
 
 // Routes
 app.use('/api/v1/bootcamps', require('./routes/bootcamps'));
+app.use('/api/v1/courses', require('./routes/courses'));
 app.use(errorHandler);
 
 // Connect to DB

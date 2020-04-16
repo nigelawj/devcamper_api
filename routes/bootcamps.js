@@ -18,4 +18,9 @@ router
   .put(updateBootcamp)
   .delete(deleteBootcamp);
 
+// Include other resource routers
+const courseRouter = require('./courses');
+
+router.use('/:bootcampID/courses', courseRouter);
+
 module.exports = router;
