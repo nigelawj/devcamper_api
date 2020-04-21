@@ -7,3 +7,19 @@ Simple practice Express backend API
 - Practice on middleware functions
 - Mongoose model
 - Simple MongoDB CRUD functionalities
+
+- Added error handling
+- Async-await and mongoose middleware
+- Initialised seeders
+- Added filtering + sorting + pagination
+
+- Added Course routes
+- CRUD and averageCost static methods for Course model
+- Implemented photo uploading
+- Refactored advanced middleware (pagination etc.)
+
+- Created user model
+- Facilitated user registration
+- Sessions with tokens and cookies
+- Created protect and role-authorize middlewares
+
