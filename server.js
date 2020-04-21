@@ -1,5 +1,5 @@
 const express = require('express');
-const app = express().use(express.json());
+const app = express();
 
 const dotenv = require('dotenv');
 // const logger = require('./middleware/logger'); // Simple middleware for testing purposes
@@ -8,6 +8,7 @@ const connectDB = require('./config/db');
 const colors = require('colors');
 const fileupload = require('express-fileupload');
 const path = require('path');
+const cookieParser = require('cookie-parser');
 
 // Load config
 dotenv.config({ path: './config/config.env' });
@@ -19,6 +20,12 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
+// Body parser
+app.use(express.json());
+
+// Cookie parser
+app.use(cookieParser());
+
 // File uploading
 app.use(fileupload());
 
@@ -28,6 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Routes
 app.use('/api/v1/bootcamps', require('./routes/bootcamps'));
 app.use('/api/v1/courses', require('./routes/courses'));
+app.use('/api/v1/auth', require('./routes/auth'));
 app.use(errorHandler);
 
 // Connect to DB
