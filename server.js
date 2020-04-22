@@ -19,16 +19,12 @@ if (process.env.NODE_ENV === 'development') {
   const morgan = require('morgan');
   app.use(morgan('dev'));
 }
-
 // Body parser
 app.use(express.json());
-
 // Cookie parser
 app.use(cookieParser());
-
 // File uploading
 app.use(fileupload());
-
 // Set Static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -36,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api/v1/bootcamps', require('./routes/bootcamps'));
 app.use('/api/v1/courses', require('./routes/courses'));
 app.use('/api/v1/auth', require('./routes/auth'));
+app.use('/api/v1/users', require('./routes/users'));
 app.use(errorHandler);
 
 // Connect to DB

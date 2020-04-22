@@ -23,3 +23,7 @@ Simple practice Express backend API
 - Sessions with tokens and cookies
 - Created protect and role-authorize middlewares
 
+- Bootcamp-User relation + Bootcamp ownership + Course ownership
+- Reset password via email
+- User update (his/her own) details
+- Admin CRUD for users
