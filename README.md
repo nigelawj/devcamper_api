@@ -14,7 +14,7 @@ Simple practice Express backend API
 - Added filtering + sorting + pagination
 
 - Added Course routes
-- CRUD and averageCost static methods for Course model
+- CRUD + averageCost static methods for Course model
 - Implemented photo uploading
 - Refactored advanced middleware (pagination etc.)
 
@@ -27,3 +27,6 @@ Simple practice Express backend API
 - Reset password via email
 - User update (his/her own) details
 - Admin CRUD for users
+
+- Review model
+- CRUD for Reviews + averageRating static method

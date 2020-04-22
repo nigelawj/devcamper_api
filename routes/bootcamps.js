@@ -1,6 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
+// Include other resource routers
+const courseRouter = require('./courses');
+const reviewRouter = require('./reviews');
+router.use('/:bootcampID/courses', courseRouter);
+router.use('/:bootcampID/reviews', reviewRouter);
+
 const {
   getBootcamps,
   getBootcamp,
@@ -26,9 +32,5 @@ router
   .put(protect, authorize('publisher', 'admin'), updateBootcamp)
   .delete(protect, authorize('publisher', 'admin'), deleteBootcamp);
 router.route('/:id/photo').put(protect, authorize('publisher', 'admin'), bootcampPhotoUpload);
-
-// Include other resource routers
-const courseRouter = require('./courses');
-router.use('/:bootcampID/courses', courseRouter);
 
 module.exports = router;
