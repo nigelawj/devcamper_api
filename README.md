@@ -30,3 +30,10 @@ Simple practice Express backend API
 
 - Review model
 - CRUD for Reviews + averageRating static method
+
+- API Security: clear cookie upon logout
+- Prevent NoSQL Injection - npm express-mongo-sanitize
+- XSS protection - npm helmet, npm xss-clean
+- Rate limiting - npm express-rate-limit
+- Prevent HTTP params pollution - npm hpp
+- Enable CORS - npm cors
