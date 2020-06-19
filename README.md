@@ -1,4 +1,4 @@
-# devcamper_api
+# devcamper-api
 Simple practice Express backend API
 - Simple Express routes; CRUD routes and headers
 - Use dotenv variables
